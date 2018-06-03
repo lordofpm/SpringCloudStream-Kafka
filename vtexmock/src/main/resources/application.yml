@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: VtexCountry1
+server:
+  port: 8881
+##############################
+location:
+  country: country1
