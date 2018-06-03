@@ -1,0 +1,32 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: kafka-demo
+  cloud:
+    stream:
+      default-binder: kafka
+      kafka:
+        binder:
+          brokers:  event-bus:9092
+      bindings:
+        output:
+          destination:  output
+        input:
+          destination:  output
+        orderoutput:
+          destination:  orderUpdate
+        orderinput:
+          destination:  orderUpdate
+##########################
+location:
+  country:  country1
+  vtexService:  http://111.231.218.25:8881/country1/order/placedOrer
+  kfcPosService:  http://111.231.218.25:9991/country1/posprocessor
+scheduling:
+  fetchOrderperiod: 15000  
+##########################
+logging:
+  level:
+    root: INFO
+#  file=D:\\Projects\\Spring\\SpringCloudStream-Kafka\\kafkademo\\log.log
